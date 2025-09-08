@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background:#1a3947 ;
+        }
+        .name{
+            display: flex;
+            height: 55vh;
+            width: 40vw;
+            gap: 23px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background: #1b1b32;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 21px #36d2d7 ;
+        }
+        .fame{
+            background: #000000;
+            position: relative;
+            padding: 55px 45px;
+            flex: 1;
+        }
+        .welcome{
+            flex: 1;
+           position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+            color: #232056;
+            background: linear-gradient(135deg, #00fff0, #0066ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="name">
+        <div class="fame">
+         <h1>LOGIN</h1>
+         <div class="cons">
+            <h2>Username</h2>
+            <input type="text">
+            <i>👤</i>
+         </div>
+          <div class="cons">
+            <h2>Password</h2>
+            <input type="text">
+            <i>🔒</i>
+         </div>
+         <button class="btn">Login</button>
+         <p class="null">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+        <div class="welcome">
+            <h1>WELCOME :)</h1>
+            <P>Hope,You are having a Good Day!</P>
+        </div>
+    </div>
+</body>
+</html>
