@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body{
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background:#1a3947 ;
+            min-height: 100vh;
+            background: #1a3947;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
               
-        .name{
+        .container {
             display: flex;
             height: 55vh;
             width: 40vw;
@@ -24,47 +26,82 @@
             background: #1b1b32;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 0 21px #36d2d7 ;
+            box-shadow: 0 0 21px #36d2d7;
         }
-        .fame{
+
+        .signup-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .form-box {
+            background: #1b1b32;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 21px #36d2d7;
+            width: 350px;
+        }
+
+        .form-box h2 {
+            color: #24487e;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .fame {
             background: #000000;
             position: relative;
             padding: 55px 45px;
             flex: 1;
         }
-        .fame h1{
+
+        .fame h1 {
             color: #24487e;
+            margin-bottom: 30px;
         }
-        .welcome{
+
+        .welcome {
             flex: 1;
-           position: relative;
+            position: relative;
             text-align: center;
             justify-content: center;
             align-items: center;
             padding: 20px 30px;
             color: #232056;
             background: linear-gradient(135deg, #00fff0, #0066ff);
+            display: flex;
+            flex-direction: column;
         }
-        .cons h2{
-            color: #067ab0;
-        }
-        .cons{
+
+        .cons, .input-box {
             position: relative;
             margin-bottom: 20px;
+            text-align: left;
         }
-        .cons input{
+
+        .cons h2, .input-box label {
+            color: #067ab0;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cons input, .input-box input {
             width: 100%;
             padding: 9px 40px 9px 9px;
             border: none;
             outline: none;
             background: transparent;
-            color:#69622f;
+            color: #69622f;
             font-size: 17px;
             border-radius: 22px;
             border-bottom: 5px solid #369891;
             box-sizing: border-box;
         }
-        .cons i{
+
+        .cons i, .input-box i {
             position: absolute;
             right: 15px;
             top: 50%;
@@ -72,58 +109,111 @@
             margin-top: 10px;
             pointer-events: none;
         }
-        .btn{
+
+        .btn {
             border-radius: 12px;
-           background: linear-gradient(90deg, #00fff0, #0099cc);
+            background: linear-gradient(90deg, #00fff0, #0099cc);
             font-size: 17px;
             border: none;
             outline: none;
-             padding: 10px;
+            padding: 10px 20px;
+            width: 100%;
+            margin-top: 10px;
         }
-        .btn:hover{
+
+        .btn:hover {
             cursor: pointer;
             box-shadow: 2px 3px 2px 2px #5f746b;
             background: #a6a19a;
             transition: 0.3s;
             opacity: 0.8;
-           }
-        .null{
+        }
+
+        .null, .switch {
             color: #fff;
             font-size: 15px;
+            text-align: center;
+            margin-top: 15px;
         }
-        .null a{
-            font: bold;
+
+        .null a, .switch a {
+            font-weight: bold;
             text-decoration: none;
+            color: #36d2d7;
         }
-        .welcome h1{
+
+        .null a:hover, .switch a:hover {
+            text-decoration: underline;
+        }
+
+        .welcome h1 {
             color: black;
+            margin-bottom: 20px;
         }
-        .welcome p{
+
+        .welcome p {
             font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div class="name">
+    <div id="login-container" class="container">
         <div class="fame">
-         <h1>LOGIN</h1>
-         <div class="cons">
-            <h2>Username</h2>
-            <input type="text">
-            <i>👤</i>
-         </div>
-          <div class="cons">
-            <h2>Password</h2>
-            <input type="password">
-            <i>🔒</i>
-         </div>
-         <button class="btn">Login</button>
-         <p class="null">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+            <h1>LOGIN</h1>
+            <div class="cons">
+                <h2>Username</h2>
+                <input type="text">
+                <i>👤</i>
+            </div>
+            <div class="cons">
+                <h2>Password</h2>
+                <input type="password">
+                <i>🔒</i>
+            </div>
+            <button class="btn">Login</button>
+            <p class="null">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
         </div>
         <div class="welcome">
             <h1>WELCOME :)</h1>
-            <P>Hope,You are having a Good Day!</P>
+            <p>Hope, You are having a Good Day!</p>
         </div>
     </div>
+
+    <div id="signup-container" class="signup-container">
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <form>
+                <div class="input-box">
+                    <label>Username</label>
+                    <input type="text" required>
+                    <i>👤</i>
+                </div>
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" required>
+                    <i>📧</i>
+                </div>
+                <div class="input-box">
+                    <label>Password</label>
+                    <input type="password" required>
+                    <i>🔒</i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p class="switch">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'flex';
+        }
+
+        function showLogin() {
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
